@@ -1,7 +1,7 @@
 use std::path::PathBuf;
 
 fn main() {
-    cxx_build::bridge("src/lib.rs")
+    cxx_build::bridge("src/tokenizer.rs")
         .file("tokenizer/tokenizer.cpp")
         .cpp(true)
         .std("c++11")
