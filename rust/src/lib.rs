@@ -1,3 +1,3 @@
 mod tokenizer;
 
-use crate::tokenizer::CoccocTokenizer;
+pub use crate::tokenizer::CocCocTokenizer;

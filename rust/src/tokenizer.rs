@@ -20,9 +20,9 @@ fn convert_to_string_vector(vec: &CxxVector<CxxString>) -> Vec<String> {
         .collect()
 }
 
-pub struct CoccocTokenizer;
+pub struct CocCocTokenizer;
 
-impl CoccocTokenizer {
+impl CocCocTokenizer {
     pub fn new() -> Self {
         Self {}
     }
