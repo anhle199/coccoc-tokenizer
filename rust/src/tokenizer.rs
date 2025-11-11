@@ -1,3 +1,5 @@
+use std::time::Instant;
+
 use cxx::{CxxString, CxxVector, let_cxx_string};
 
 #[cxx::bridge]
@@ -28,8 +30,13 @@ impl CocCocTokenizer {
     }
 
     pub fn initialize(dict_path: &str, load_nontone_data: bool) -> i32 {
+        let start_time = Instant::now();
+        println!("start initializing Vietnamese dictionary...");
         let_cxx_string!(cxx_dict_path = dict_path);
-        return ffi::initialize(&cxx_dict_path, load_nontone_data);
+        let init_res = ffi::initialize(&cxx_dict_path, load_nontone_data);
+        let duration = start_time.elapsed();
+        println!("initialized Vietnamese dictionary in {:?}", duration);
+        return init_res;
     }
 
     pub fn segment_original(&self, text: &str) -> Vec<String> {
