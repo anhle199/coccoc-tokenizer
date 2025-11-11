@@ -4,6 +4,7 @@ python/*.c
 python/*.cpp
 python/*.html
 rust/.idea
+rust/.cargo
 rust/target
 rust/Cargo.lock
 *.DS_Store
